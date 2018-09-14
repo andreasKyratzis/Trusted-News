@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:id="@+id/news_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp">
+        <ListView
+            android:id="@+id/newsfeed_listview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:id="@+id/newsfeed_loadingView"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/sentiment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:id="@+id/sentiment_loadingView"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:visibility="gone" />
+        <com.andreaskyratzis.trustednews.PieChartView
+            android:id="@+id/pie_chart"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="#FFF"
+            android:paddingBottom="40dp"
+            android:paddingLeft="20dp"
+            app:circleRadius="100dp"
+            app:textSize="13sp"
+            android:visibility="invisible"/>
+    </LinearLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_menu"
+        android:background="@color/color_gray">
+    </android.support.design.widget.BottomNavigationView>
+</RelativeLayout>
